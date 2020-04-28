@@ -59,12 +59,20 @@ public class BankOperations {
                 () -> Assertions.assertEquals(creditOffer.getCreditOfferType(), "Business"));
     }
 
-    @Then("^we have nobody on credit offer list$")
+    @Then("^we have nobody on economy credit offer list$")
     public void you_have_nobody_on_credit_offer_list() throws Throwable {
         assertAll("we check if customer disappeared from the list",
                 () -> assertNotNull(creditOffer.getCustomersList()),
                 () -> Assertions.assertEquals(0, creditOffer.getCustomersList().size()),
                 () -> Assertions.assertEquals(creditOffer.getCreditOfferType(), "Economy"));
+    }
+
+    @Then("^we have nobody on business credit offer list$")
+    public void you_have_nobody_on_business_credit_offer_list() throws Throwable {
+        assertAll("we check if customer disappeared from the list",
+                () -> assertNotNull(creditOffer.getCustomersList()),
+                () -> Assertions.assertEquals(0, creditOffer.getCustomersList().size()),
+                () -> Assertions.assertEquals(creditOffer.getCreditOfferType(), "Business"));
     }
 
 }
