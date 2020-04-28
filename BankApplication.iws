@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64ec4427-1ddc-4cba-bd81-10c1bea28066" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/javabdd/bank/Bank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/javabdd/bank/CreditOffer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/javabdd/bank/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/luxoft/javabdd/bank/BankOperations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/luxoft/javabdd/bank/BankTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/luxoft/javabdd/bank/CucumberTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/bank_cucumber.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankApplication.iws" beforeDir="false" afterPath="$PROJECT_DIR$/BankApplication.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/luxoft/javabdd/bank/BankOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/luxoft/javabdd/bank/BankOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/bank_cucumber.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/bank_cucumber.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -443,7 +439,7 @@
       <workItem from="1587972299231" duration="624000" />
       <workItem from="1587980860737" duration="4457000" />
       <workItem from="1588056777651" duration="6732000" />
-      <workItem from="1588064978812" duration="3669000" />
+      <workItem from="1588064978812" duration="4866000" />
     </task>
     <servers />
   </component>
@@ -527,22 +523,22 @@
       <screen x="1920" y="74" width="1920" height="1050" />
     </state>
     <state x="2660" y="354" key="FileChooserDialogImpl/1920.74.1920.1050/0.0.1920.1050@1920.74.1920.1050" timestamp="1588065621406" />
-    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1588069338325">
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1588070518573">
       <screen x="1920" y="74" width="1920" height="1050" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.bottom/1920.74.1920.1050/0.0.1920.1050@1920.74.1920.1050" timestamp="1588069338325" />
-    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1588069338324">
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom/1920.74.1920.1050/0.0.1920.1050@1920.74.1920.1050" timestamp="1588070518573" />
+    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1588070518573">
       <screen x="1920" y="74" width="1920" height="1050" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.center/1920.74.1920.1050/0.0.1920.1050@1920.74.1920.1050" timestamp="1588069338324" />
-    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1588069338324">
+    <state width="1877" height="277" key="GridCell.Tab.0.center/1920.74.1920.1050/0.0.1920.1050@1920.74.1920.1050" timestamp="1588070518573" />
+    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1588070518573">
       <screen x="1920" y="74" width="1920" height="1050" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.left/1920.74.1920.1050/0.0.1920.1050@1920.74.1920.1050" timestamp="1588069338324" />
-    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1588069338324">
+    <state width="1877" height="277" key="GridCell.Tab.0.left/1920.74.1920.1050/0.0.1920.1050@1920.74.1920.1050" timestamp="1588070518573" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1588070518573">
       <screen x="1920" y="74" width="1920" height="1050" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.right/1920.74.1920.1050/0.0.1920.1050@1920.74.1920.1050" timestamp="1588069338324" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right/1920.74.1920.1050/0.0.1920.1050@1920.74.1920.1050" timestamp="1588070518573" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1588064865589">
       <screen x="1920" y="74" width="1920" height="1050" />
     </state>
