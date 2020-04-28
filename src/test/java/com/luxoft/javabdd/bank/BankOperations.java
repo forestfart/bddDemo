@@ -13,14 +13,13 @@ public class BankOperations {
     Customer regularCustomer = new Customer("Mike", false);
     Customer vipCustomer = new Customer("Moly", true);
 
-    @Given("^a economy credit offer$")
-    public void a_economy_credit_offer() throws Throwable {
-        creditOffer = new EconomyCreditOffer("1");
-    }
-
-    @Given("^a business credit offer$")
-    public void a_business_credit_offer() throws Throwable {
-        creditOffer = new BusinessCreditOffer("2");
+    @Given("^a \\\"([^\\\"]*)\\\" credit offer$")
+    public void a_economy_credit_offer(String arg1) throws Throwable {
+        if (arg1.equals("economy")) {
+            creditOffer = new EconomyCreditOffer("1");
+        } else if (arg1.equals("business")) {
+            creditOffer = new BusinessCreditOffer("2");
+        }
     }
 
     @When("^we add a regular customer$")
