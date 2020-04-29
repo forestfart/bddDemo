@@ -19,6 +19,8 @@ public class BankOperations {
             creditOffer = new EconomyCreditOffer("1");
         } else if (offerType.equals("business")) {
             creditOffer = new BusinessCreditOffer("2");
+        } else if (offerType.equals("premium")) {
+            creditOffer = new PremiumCreditOffer("3");
         }
     }
 
@@ -38,7 +40,7 @@ public class BankOperations {
     }
 
     @When("^remove a vip customer$")
-    public void remove__a_vip_customer() throws Throwable {
+    public void remove_a_vip_customer() throws Throwable {
         creditOffer.removeCustomer(vipCustomer);
     }
 

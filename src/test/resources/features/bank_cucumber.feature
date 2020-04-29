@@ -18,12 +18,28 @@ Feature: Bank Operations
     And remove a vip customer
     Then we have the 1 customer on "Economy" credit offer list
 
-    Scenario: Addition of vip customer to business credit offer
-      Given a "business" credit offer
-      When we add a vip customer
-      Then we have the 1 customer on "Business" credit offer list
+  Scenario: Addition of vip customer to business credit offer
+    Given a "business" credit offer
+    When we add a vip customer
+    Then we have the 1 customer on "Business" credit offer list
 
-    Scenario: Addition of regular customer to business credit offer
-      Given a "business" credit offer
-      When we add a regular customer
-      Then we have the 0 customer on "Business" credit offer list
+  Scenario: Addition of regular customer to business credit offer
+    Given a "business" credit offer
+    When we add a regular customer
+    Then we have the 0 customer on "Business" credit offer list
+
+  Scenario: Addition of vip customer to premium credit offer
+    Given a "premium" credit offer
+    When we add a regular customer
+    Then we have the 0 customer on "Premium" credit offer list
+
+  Scenario: Addition of vip customer to premium credit offer
+    Given a "premium" credit offer
+    When we add a vip customer
+    Then we have the 1 customer on "Premium" credit offer list
+
+  Scenario: Removal of vip user from premium credit offer
+    Given a "premium" credit offer
+    When we add a vip customer
+    And remove a vip customer
+    Then we have the 0 customer on "Premium" credit offer list
