@@ -1,10 +1,12 @@
 package com.luxoft.javabdd.bank;
 
+import java.math.BigDecimal;
+
 public class Bank {
 
     public static void main(String[] args) {
-        CreditOffer economyCreditOffer = new EconomyCreditOffer("1");
-        CreditOffer businessCreditOffer = new BusinessCreditOffer("2");
+        CreditOffer economyCreditOffer = new EconomyCreditOffer("1", BigDecimal.valueOf(100_000.00));
+        CreditOffer businessCreditOffer = new BusinessCreditOffer("2", BigDecimal.valueOf(200_000.00));
 
         Customer john = new Customer("John", true);
         Customer mike = new Customer("Mike", false);

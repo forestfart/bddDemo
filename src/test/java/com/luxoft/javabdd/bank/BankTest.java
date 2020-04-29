@@ -4,6 +4,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -18,7 +20,7 @@ public class BankTest {
         class UsualCustomer {
             @Test
             void thenClientCanAddCustomerToEconomyCreditOffer() {
-                CreditOffer economyCreditOffer = new EconomyCreditOffer("1");
+                CreditOffer economyCreditOffer = new EconomyCreditOffer("1", BigDecimal.valueOf(100_000.00));
                 economyCreditOffer.addCustomer(new Customer("Mike", false));
 
                 assertAll("clientCanAddCustomerToEconomyCreditOffer",
@@ -29,7 +31,7 @@ public class BankTest {
 
             @Test
             void thenClientCanRemoveCustomerFromEconomyCreditOffer() {
-                CreditOffer economyCreditOffer = new EconomyCreditOffer("1");
+                CreditOffer economyCreditOffer = new EconomyCreditOffer("1", BigDecimal.valueOf(100_000.00));
                 Customer customer = new Customer("Mike", false);
 
                 economyCreditOffer.addCustomer(customer);
@@ -46,7 +48,7 @@ public class BankTest {
         class VipCustomer {
             @Test
             void thenClientCannotRemoveCustomerVipCustomer() {
-                CreditOffer economyCreditOffer = new EconomyCreditOffer("1");
+                CreditOffer economyCreditOffer = new EconomyCreditOffer("1", BigDecimal.valueOf(100_000.00));
                 Customer customer = new Customer("Mike", true);
 
                 economyCreditOffer.addCustomer(customer);
@@ -68,7 +70,7 @@ public class BankTest {
         class VipCustomer {
             @Test
             void thenClientCanAddVipCustomerToBusinessCreditOffer() {
-                CreditOffer businessCreditOffer = new BusinessCreditOffer("2");
+                CreditOffer businessCreditOffer = new BusinessCreditOffer("2", BigDecimal.valueOf(200_000.00));
                 businessCreditOffer.addCustomer(new Customer("Mike", true));
 
                 assertAll("clientCanAddCustomerToBusinessCreditOffer",
@@ -83,7 +85,7 @@ public class BankTest {
         class UsualCustomer {
             @Test
             void thenClientCannotAddRegularCustomerToBusinessCreditOffer() {
-                CreditOffer businessCreditOffer = new BusinessCreditOffer("2");
+                CreditOffer businessCreditOffer = new BusinessCreditOffer("2", BigDecimal.valueOf(200_000.00));
                 businessCreditOffer.addCustomer(new Customer("Mike", false));
 
                 assertAll("clientCanAddCustomerToBusinessCreditOffer",
@@ -96,7 +98,7 @@ public class BankTest {
 
     @Test
     void clientCanPrintListOfCustomersOnCreditOfferList() {
-        BusinessCreditOffer businessCreditOffer = new BusinessCreditOffer("2");
+        BusinessCreditOffer businessCreditOffer = new BusinessCreditOffer("2", BigDecimal.valueOf(200_000.00));
         Customer customer1 = new Customer("Mike", false);
         Customer customer2 = new Customer("John", false);
 

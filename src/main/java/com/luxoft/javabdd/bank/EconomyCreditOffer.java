@@ -1,5 +1,6 @@
 package com.luxoft.javabdd.bank;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -8,8 +9,8 @@ class EconomyCreditOffer extends CreditOffer {
     private String creditOfferType;
     private List<Customer> customersList = new ArrayList<Customer>();
 
-    public EconomyCreditOffer(String id) {
-        super(id);
+    public EconomyCreditOffer(String id, BigDecimal amount) {
+        super(id, amount);
         this.creditOfferType = "Economy";
     }
 

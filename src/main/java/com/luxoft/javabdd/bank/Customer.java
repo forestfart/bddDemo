@@ -4,6 +4,7 @@ public class Customer {
 
 	private String name;
 	private boolean vip;
+	private int bonusPoints;
 
 	public Customer(String name, boolean vip) {
 		this.name = name;
@@ -18,4 +19,11 @@ public class Customer {
 		return vip;
 	}
 
+	public int addBonusPoints(int bonusPoints) {
+		return this.bonusPoints += bonusPoints;
+	}
+
+	public int getBonusPoints() {
+		return bonusPoints;
+	}
 }

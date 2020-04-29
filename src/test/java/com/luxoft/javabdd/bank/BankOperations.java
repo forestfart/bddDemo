@@ -5,6 +5,8 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.jupiter.api.Assertions;
 
+import java.math.BigDecimal;
+
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -13,14 +15,14 @@ public class BankOperations {
     Customer regularCustomer = new Customer("Mike", false);
     Customer vipCustomer = new Customer("Moly", true);
 
-    @Given("^a \\\"([^\\\"]*)\\\" credit offer$")
-    public void a_economy_credit_offer(String offerType) throws Throwable {
+    @Given("^a \\\"([^\\\"]*)\\\" credit offer of an \\\"([^\\\"]*)\\\"$")
+    public void a_economy_credit_offer(String offerType, String amount) throws Throwable {
         if (offerType.equals("economy")) {
-            creditOffer = new EconomyCreditOffer("1");
+            creditOffer = new EconomyCreditOffer("1",  new BigDecimal(amount));
         } else if (offerType.equals("business")) {
-            creditOffer = new BusinessCreditOffer("2");
+            creditOffer = new BusinessCreditOffer("2", new BigDecimal(amount));
         } else if (offerType.equals("premium")) {
-            creditOffer = new PremiumCreditOffer("3");
+            creditOffer = new PremiumCreditOffer("3", new BigDecimal(amount));
         }
     }
 
@@ -55,6 +57,14 @@ public class BankOperations {
                 () -> assertNotNull(creditOffer.getCustomersList()),
                 () -> Assertions.assertEquals(expectedCount, creditOffer.getCustomersList().size()),
                 () -> Assertions.assertEquals(creditOffer.getCreditOfferType(), offerType));
+    }
+
+    @Then("^\\\"([^\\\"]*)\\\" customer receives (\\d+)$")
+    public void he_she_receives_bonus_points(String customerType, int bonusPoints) throws Throwable {
+        Customer customer = customerType.equals("vip") ? vipCustomer : regularCustomer;
+        assertAll("check bonus points vs. amount",
+                () -> assertNotNull(creditOffer.getAmount()),
+                () -> Assertions.assertEquals(bonusPoints, customer.getBonusPoints()));
     }
 
 }
