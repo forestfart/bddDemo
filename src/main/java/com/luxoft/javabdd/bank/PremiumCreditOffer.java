@@ -16,7 +16,7 @@ class PremiumCreditOffer extends CreditOffer {
     @Override
     public boolean addCustomer(Customer customer) {
         if (customer.isVip()) {
-            return customersList.add(customer);
+            return handleNewCustomer(customersList, customer);
         }
         return false;
     }

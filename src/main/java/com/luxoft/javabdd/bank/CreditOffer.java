@@ -5,7 +5,7 @@ import java.util.List;
 public abstract class CreditOffer {
     private String id;
 
-    public CreditOffer(String id) {
+    protected CreditOffer(String id) {
         this.id = id;
     }
 
@@ -13,13 +13,20 @@ public abstract class CreditOffer {
         return id;
     }
 
-    public abstract List<Customer> getCustomersList();
+    protected abstract List<Customer> getCustomersList();
 
-    public abstract boolean addCustomer(Customer customer);
+    protected abstract boolean addCustomer(Customer customer);
 
-    public abstract boolean removeCustomer(Customer customer);
+    protected abstract boolean removeCustomer(Customer customer);
 
-    public abstract String getCreditOfferType();
+    protected abstract String getCreditOfferType();
+
+    final protected boolean handleNewCustomer(List<Customer> customersList, Customer customer) {
+        if (!customersList.contains(customer)) {
+            return customersList.add(customer);
+        }
+        return false;
+    }
 
 }
 

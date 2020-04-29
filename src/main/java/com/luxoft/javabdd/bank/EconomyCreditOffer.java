@@ -15,7 +15,7 @@ class EconomyCreditOffer extends CreditOffer {
 
     @Override
     public boolean addCustomer(Customer customer) {
-        return customersList.add(customer);
+        return handleNewCustomer(customersList, customer);
     }
 
     @Override

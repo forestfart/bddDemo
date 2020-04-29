@@ -42,7 +42,14 @@ public class BankOperations {
         }
     }
 
-    @Then("^we have the (\\d+) customer on \\\"([^\\\"]*)\\\" credit offer list$")
+    @Then("^we have the (\\d+) customers on a credit offer list$")
+    public void we_have_the_customer_on_credit_offer_list(int expectedCount) throws Throwable {
+        assertAll("customer should be on the list",
+                () -> assertNotNull(creditOffer.getCustomersList()),
+                () -> Assertions.assertEquals(expectedCount, creditOffer.getCustomersList().size()));
+    }
+
+    @Then("^we have the (\\d+) customers on \\\"([^\\\"]*)\\\" credit offer list$")
     public void we_have_the_customer_on_credit_offer_list(int expectedCount, String offerType) throws Throwable {
         assertAll("customer should be on the list",
                 () -> assertNotNull(creditOffer.getCustomersList()),
