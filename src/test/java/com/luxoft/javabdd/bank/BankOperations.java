@@ -24,24 +24,22 @@ public class BankOperations {
         }
     }
 
-    @When("^we add a regular customer$")
-    public void we_add_a_regular_customer() throws Throwable {
-        creditOffer.addCustomer(regularCustomer);
+    @When("^we add a \\\"([^\\\"]*)\\\" customer$")
+    public void we_add_a_customer(String customerType) throws Throwable {
+        if (customerType.equals("regular")) {
+            creditOffer.addCustomer(regularCustomer);
+        } else if (customerType.equals("vip")) {
+            creditOffer.addCustomer(vipCustomer);
+        }
     }
 
-    @When("^we add a vip customer$")
-    public void we_add_a_vip_customer() throws Throwable {
-        creditOffer.addCustomer(vipCustomer);
-    }
-
-    @When("^remove a regular customer$")
-    public void remove_a_regular_customer() throws Throwable {
-        creditOffer.removeCustomer(regularCustomer);
-    }
-
-    @When("^remove a vip customer$")
-    public void remove_a_vip_customer() throws Throwable {
-        creditOffer.removeCustomer(vipCustomer);
+    @When("^remove a \\\"([^\\\"]*)\\\" customer$")
+    public void remove_a_customer(String customerType) throws Throwable {
+        if (customerType.equals("regular")) {
+            creditOffer.removeCustomer(regularCustomer);
+        } else if (customerType.equals("vip")) {
+            creditOffer.removeCustomer(vipCustomer);
+        }
     }
 
     @Then("^we have the (\\d+) customer on \\\"([^\\\"]*)\\\" credit offer list$")
