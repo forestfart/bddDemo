@@ -10,6 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>Module 3</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>example1</module>
+        <module>example2</module>
+    </modules>
 
 
 </project>
