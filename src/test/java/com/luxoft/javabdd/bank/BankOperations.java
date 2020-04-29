@@ -46,7 +46,7 @@ public class BankOperations {
     public void we_have_the_customer_on_credit_offer_list(int expectedCount, String offerType) throws Throwable {
         assertAll("customer should be on the list",
                 () -> assertNotNull(creditOffer.getCustomersList()),
-                () -> Assertions.assertEquals( expectedCount, creditOffer.getCustomersList().size()),
+                () -> Assertions.assertEquals(expectedCount, creditOffer.getCustomersList().size()),
                 () -> Assertions.assertEquals(creditOffer.getCreditOfferType(), offerType));
     }
 
