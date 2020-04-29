@@ -14,10 +14,10 @@ public class BankOperations {
     Customer vipCustomer = new Customer("Moly", true);
 
     @Given("^a \\\"([^\\\"]*)\\\" credit offer$")
-    public void a_economy_credit_offer(String arg1) throws Throwable {
-        if (arg1.equals("economy")) {
+    public void a_economy_credit_offer(String offerType) throws Throwable {
+        if (offerType.equals("economy")) {
             creditOffer = new EconomyCreditOffer("1");
-        } else if (arg1.equals("business")) {
+        } else if (offerType.equals("business")) {
             creditOffer = new BusinessCreditOffer("2");
         }
     }
@@ -42,28 +42,12 @@ public class BankOperations {
         creditOffer.removeCustomer(vipCustomer);
     }
 
-    @Then("^we have the customer on \\\"([^\\\"]*)\\\" credit offer list$")
-    public void we_have_the_customer_on_credit_offer_list(String arg1) throws Throwable {
+    @Then("^we have the (\\d+) customer on \\\"([^\\\"]*)\\\" credit offer list$")
+    public void we_have_the_customer_on_credit_offer_list(int expectedCount, String offerType) throws Throwable {
         assertAll("customer should be on the list",
                 () -> assertNotNull(creditOffer.getCustomersList()),
-                () -> Assertions.assertEquals( 1, creditOffer.getCustomersList().size()),
-                () -> Assertions.assertEquals(creditOffer.getCreditOfferType(), arg1));
-    }
-
-    @Then("^we have nobody on economy credit offer list$")
-    public void you_have_nobody_on_credit_offer_list() throws Throwable {
-        assertAll("we check if customer disappeared from the list",
-                () -> assertNotNull(creditOffer.getCustomersList()),
-                () -> Assertions.assertEquals(0, creditOffer.getCustomersList().size()),
-                () -> Assertions.assertEquals(creditOffer.getCreditOfferType(), "Economy"));
-    }
-
-    @Then("^we have nobody on business credit offer list$")
-    public void you_have_nobody_on_business_credit_offer_list() throws Throwable {
-        assertAll("we check if customer disappeared from the list",
-                () -> assertNotNull(creditOffer.getCustomersList()),
-                () -> Assertions.assertEquals(0, creditOffer.getCustomersList().size()),
-                () -> Assertions.assertEquals(creditOffer.getCreditOfferType(), "Business"));
+                () -> Assertions.assertEquals( expectedCount, creditOffer.getCustomersList().size()),
+                () -> Assertions.assertEquals(creditOffer.getCreditOfferType(), offerType));
     }
 
 }
