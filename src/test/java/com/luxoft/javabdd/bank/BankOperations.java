@@ -42,20 +42,12 @@ public class BankOperations {
         creditOffer.removeCustomer(vipCustomer);
     }
 
-    @Then("^we have the customer on economy credit offer list$")
-    public void we_have_the_customer_on_economy_credit_offer_list() throws Throwable {
+    @Then("^we have the customer on \\\"([^\\\"]*)\\\" credit offer list$")
+    public void we_have_the_customer_on_credit_offer_list(String arg1) throws Throwable {
         assertAll("customer should be on the list",
                 () -> assertNotNull(creditOffer.getCustomersList()),
                 () -> Assertions.assertEquals( 1, creditOffer.getCustomersList().size()),
-                () -> Assertions.assertEquals(creditOffer.getCreditOfferType(), "Economy"));
-    }
-
-    @Then("^we have the customer on business credit offer list$")
-    public void we_have_the_customer_on_business_credit_offer_list() throws Throwable {
-        assertAll("customer should be on the list",
-                () -> assertNotNull(creditOffer.getCustomersList()),
-                () -> Assertions.assertEquals( 1, creditOffer.getCustomersList().size()),
-                () -> Assertions.assertEquals(creditOffer.getCreditOfferType(), "Business"));
+                () -> Assertions.assertEquals(creditOffer.getCreditOfferType(), arg1));
     }
 
     @Then("^we have nobody on economy credit offer list$")

@@ -4,7 +4,7 @@ Feature: Bank Operations
   Scenario: Addition of user to economy credit offer
     Given a "economy" credit offer
     When we add a regular customer
-    Then we have the customer on economy credit offer list
+    Then we have the customer on "Economy" credit offer list
 
   Scenario: Removal of user from economy credit offer
     Given a "economy" credit offer
@@ -16,12 +16,12 @@ Feature: Bank Operations
     Given a "economy" credit offer
     When we add a vip customer
     And remove a vip customer
-    Then we have the customer on economy credit offer list
+    Then we have the customer on "Economy" credit offer list
 
     Scenario: Addition of vip customer to business credit offer
       Given a "business" credit offer
       When we add a vip customer
-      Then we have the customer on business credit offer list
+      Then we have the customer on "Business" credit offer list
 
     Scenario: Addition of regular customer to business credit offer
       Given a "business" credit offer
