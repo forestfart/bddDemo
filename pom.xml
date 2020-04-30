@@ -48,6 +48,11 @@
             <version>1.2.5</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jbehave</groupId>
+            <artifactId>jbehave-core</artifactId>
+            <version>4.6.3</version>
+        </dependency>
     </dependencies>
     <name>BankApplication</name>
     <url>http://maven.apache.org</url>
