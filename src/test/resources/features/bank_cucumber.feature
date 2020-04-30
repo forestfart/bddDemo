@@ -39,11 +39,15 @@ Feature: Bank Operations
       | premium         | vip     | 1                    |
 
   Scenario Outline: A customer may receive bonus points depending on the amount of credit offer
-    Given a "economy" credit offer of an "<amount>"
+    Given a "<creditOfferType>" credit offer of an "<amount>"
     When we add a "<type>" customer
     Then "<type>" customer receives <bonusPoints>
 
     Examples:
-      | amount    | type    | bonusPoints |
-      | 100000.00 | regular | 5000        |
-      | 100000.00 | vip     | 10000       |
+      | creditOfferType | amount    | type    | bonusPoints |
+      | economy         | 100000.00 | regular | 5000        |
+      | economy         | 100000.00 | vip     | 10000       |
+      | business        | 100000.00 | regular | 0           |
+      | business        | 100000.00 | vip     | 10000       |
+      | premium         | 100000.00 | regular | 0           |
+      | premium         | 100000.00 | vip     | 10000       |
